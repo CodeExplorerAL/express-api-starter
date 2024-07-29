@@ -1,9 +1,13 @@
 const express = require('express'); // 引入 Express 框架
+const cors = require('cors'); // 引入 CORS 中間件
 const app = express(); // 創建一個 Express 應用
 const port = 3000; // 定義伺服器運行的端口
 
 // 中間件，用於解析 JSON 請求體
 app.use(express.json());
+
+// 中間件，用於處理跨域請求
+app.use(cors());
 
 // 模擬的資料庫
 let users = [
